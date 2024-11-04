@@ -1,0 +1,85 @@
+/* src/styles.css */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// variable
+:root{
+    --COLOS-:#6161e9;
+}
+
+// animation
+.spinner {
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+        color:red;
+    }
+    to {
+        transform: rotate(360deg);
+        color:burlywood;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+       color:white;
+       transform: translateY(0px);
+    }
+    to{
+        color:var(--COLOS-);
+        transform: translateY(-7px);
+    }
+}
+
+@keyframes cv {
+    from {
+       color:black;
+       border: 2px dashed black;
+    }
+    to{
+        color:var(--COLOS-);
+        border: 2px solid #9000ff;
+    }
+}
+.b_cv{
+
+}
+
+//code scss
+.b_cv{
+    animation: cv 1s forwards infinite;
+}
+nav{
+    a{
+        font-weight: bold;
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif ;
+        &:hover{
+            animation: fadeIn 0.4s forwards;
+            text-decoration: underline;
+            
+        }
+    }
+}
+
+
+.hide::-webkit-scrollbar {
+    display: none;
+}
+
+.h{
+    min-height: 400px;
+}
+.f{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+.bg{
+    background-image: url("../src/bg.jpg");
+    background-position: center;
+}
+.bg1{
+    background-color:#c8a86a38 ;
+}
