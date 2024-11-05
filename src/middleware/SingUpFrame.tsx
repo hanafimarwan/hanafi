@@ -4,7 +4,10 @@ import { handleSubmit, setFunctionB, setFunctionS } from '../api/Sing';
 import { useNavigate } from 'react-router-dom';
 import { sleep } from '../hook/function';
 // import gg from '../../public/data.xml'
+
 export const SingUpFrame = () => {
+    // class
+    const today = new Date();
     // variable
     const [email,setEmail]:[string,setFunctionS]=useState('');
     const [password,setPassword]:[string,setFunctionS]=useState('');
@@ -18,13 +21,12 @@ export const SingUpFrame = () => {
         setLoading(true);
         e.preventDefault();
         const s:string=await handleSubmit(e,email,password,confirmPassword,isChecked);
-        if(s==="New user added successfully!") navigate('/user.logIn.2024.30')
+        if(s==="New user added successfully!") navigate('/user.logIn.' + today.getFullYear() + '.' + today.getDate())
         setError(s);
         await sleep(1000);
         setLoading(false);
     }
-    // class
-    const today = new Date();
+    
 
 
 

@@ -17,6 +17,7 @@ export const Connect = () => {
     const [loading, setLoading]:[boolean,setFunctionB] = useState(false);
 
     const handelClick=async(e: React.FormEvent):Promise<void>=>{
+        e.preventDefault();
         const user=localStorage.getItem("user");
         if(user===null){
             setTest("you must to login first!");
@@ -46,9 +47,9 @@ export const Connect = () => {
         </div>}
             <h1 id='contact' className='text-center text-2xl  text-orange-700 italic underline'>Send Email to Me</h1>
             <form action="" className="md:w-3/5 w-P1  min-h-60  border-2 border-orange-600 rounded-xl mx-auto   mt-10 bg-orange-50 flex justify-around items-center flex-col pt-6" onSubmit={handelClick}>
-                <input className='border border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' type="text" placeholder='To' value={recipient} onChange={e=>setRecipient(e.target.value)} />
-                <input className='mt-1 border border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' type="text" placeholder='Subject' value={subject} onChange={e=>setSubject(e.target.value)} />
-                <textarea className='mt-1 border border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-32' name="" id="" placeholder='Message' value={message} onChange={e=>setMessage(e.target.value)} ></textarea>
+                <input className='border border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' required type="text" placeholder='FR0M' value={recipient} onChange={e=>setRecipient(e.target.value)} />
+                <input className='mt-1 border border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' required type="text" placeholder='Subject' value={subject} onChange={e=>setSubject(e.target.value)} />
+                <textarea className='mt-1 border border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-32' required name="" id="" placeholder='Message' value={message} onChange={e=>setMessage(e.target.value)} ></textarea>
                 <button className='p-2 bg-blue-800 font-bold italic text-white px-3 rounded-md border border-gray-800 hover:bg-white hover:text-gray-800 hover:border-blue-700 m-2'>Send</button>
             </form>
             {result&&<div className="absolute top-1/3 md:w-80 w-P2  h-60 px-2 shadow-xl z-50 shadow-gray-400   rounded-xl mx-auto  inset-0 bg-white flex justify-around items-center flex-col pt-6 border-gray-800 border-2">

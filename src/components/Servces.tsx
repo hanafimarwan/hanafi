@@ -29,7 +29,7 @@ export const Servces = () => {
                             onPlay={handlePlay}
                             onPause={handlePause}
                         >
-                            <source src="/v2.mp4" type="video/mp4" />
+                            <source src="/s_vd.mp4" type="video/mp4" />
                             Your browser does not support the video tag.
                         </video>
                         <audio ref={audioRef} src="/ms.mp3" /> {/* Add your audio file path */}

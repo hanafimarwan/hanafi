@@ -19,7 +19,7 @@ export const LogInForm:React.FC<ItemProps>  = ({handleSubmit,loading }) => {
                 </div>}
                 <form  className="md:w-80 w-P2  min-h-72 px-2 shadow-sm shadow-black  border-2 border-orange-600 rounded-xl mx-auto  inset-0 bg-[#c8a86a38] flex justify-around items-center flex-col pt-6" onSubmit={(e)=>handleSubmit(e,email,password,isChecked,setError)}>
                     <h1 className='text-xl text-white p-2 f'>You can LogIn from here!</h1>
-                    <input className='focus:outline-none border-b-2 border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' type="text" placeholder='email' value={email} onChange={e=>setEmail(e.target.value)}/>
+                    <input className='focus:outline-none border-b-2 border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' type="email" placeholder='email' value={email} onChange={e=>setEmail(e.target.value)}/>
                     <input className='focus:outline-none mt-1 border-b-2 border-gray-800 rounded-md  p-2 md:w-4/5 w-P1 h-10' type="password" placeholder='password' value={password} onChange={e=>setPassword(e.target.value)} />
                     <div className=" md:w-4/5 w-P1 h-10 flex justify-between items-center">
                         <label htmlFor="robot" className='f'>confirm you are not arobt</label>

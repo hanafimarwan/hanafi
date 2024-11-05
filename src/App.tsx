@@ -20,7 +20,6 @@ function App() {
           <Route  path={'/user.singUp.'+ today.getFullYear()+'.'+today.getDate()}                             element={<Singup/>}/>
           <Route  path={'/user.logIn.'+ today.getFullYear()+'.'+today.getDate()}                             element={<LogIN/>}/>
           <Route  path={'/user.get.Your.Password.'+ today.getFullYear()+'.'+today.getDate()}                             element={<GetPassword/>}/>
-          {/* <Route  path={'users.data.xml'}                             element={<CreateXMLFile/>}/> */}
           <Route  path='*'                              element={<Error/>}/>
       </Routes>
     </div>

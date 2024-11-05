@@ -33,8 +33,6 @@ export const handleSubmitLogIn = async (event: React.FormEvent, email: string, p
     const formData= { email, password };
     if(email==="admin@gmail.com"&&password==="admin@admin.hanafi") {
         const usersArray:User[]|string=await getAllData(email, password);
-        console.log(usersArray)
-        // if(typeof usersArray==="string") return ""
         return usersArray;
     }
     try {
@@ -49,6 +47,32 @@ export const handleSubmitLogIn = async (event: React.FormEvent, email: string, p
         return "Error for login";
     }
 };
+
+export const handleSubmitPassword = async (event: React.FormEvent, email: string): Promise<number> => {
+    const formData= { email };
+    try {
+        const response = await axios.post("http://localhost:1001/api.password", formData, {
+            headers: { 'Content-Type': 'application/json' }
+        });
+        return response.data;
+    } catch (error) {
+        console.log('Error during request:', error); 
+        return 0;
+    }
+}
+
+export const handleChangePassword = async (event: React.FormEvent, email: string,password:string): Promise<number> => {
+    const formData= { email,password };
+    try {
+        const response = await axios.post("http://localhost:1001/api.change.password", formData, {
+            headers: { 'Content-Type': 'application/json' }
+        });
+        return response.data;
+    } catch (error) {
+        console.log('Error during request:', error); 
+        return 0;
+    }
+}
 
 export type setFunctionS=React.Dispatch<React.SetStateAction<string>>;
 export type setFunctionB=React.Dispatch<React.SetStateAction<boolean>>;
