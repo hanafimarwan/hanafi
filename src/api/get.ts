@@ -11,7 +11,7 @@ export async function getAllData(email: string, password: string): Promise<User[
     const formData = { email, password };
 
     try {
-        const response = await axios.post('http://localhost:1001/api.login', formData, {
+        const response = await axios.post('http://localhost:10010/api.login', formData, {
             headers: { 'Content-Type': 'application/json' }
         });
 

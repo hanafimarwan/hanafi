@@ -14,7 +14,7 @@ export const handleSubmit = async (event: React.FormEvent, email: string, passwo
     const formData = { email, password };
 
     try {
-        const response = await axios.post(process.env.REACT_APP_SING_PATH, formData, {
+        const response = await axios.post('http://localhost:10010/api.signup', formData, {
             headers: { 'Content-Type': 'application/json' }
         });
         return response.data.message; // Assuming the response contains a message
@@ -36,7 +36,7 @@ export const handleSubmitLogIn = async (event: React.FormEvent, email: string, p
         return usersArray;
     }
     try {
-        const response = await axios.post(process.env.REACT_APP_LOG_PATH, formData, {
+        const response = await axios.post('http://localhost:10010/api.login', formData, {
             headers: { 'Content-Type': 'application/json' }
         });
         if(response.data===null) return "wrong password or email!";
@@ -51,7 +51,7 @@ export const handleSubmitLogIn = async (event: React.FormEvent, email: string, p
 export const handleSubmitPassword = async (event: React.FormEvent, email: string): Promise<number> => {
     const formData= { email };
     try {
-        const response = await axios.post("http://localhost:1001/api.password", formData, {
+        const response = await axios.post("http://localhost:10010/api.password", formData, {
             headers: { 'Content-Type': 'application/json' }
         });
         return response.data;
@@ -64,7 +64,7 @@ export const handleSubmitPassword = async (event: React.FormEvent, email: string
 export const handleChangePassword = async (event: React.FormEvent, email: string,password:string): Promise<number> => {
     const formData= { email,password };
     try {
-        const response = await axios.post("http://localhost:1001/api.change.password", formData, {
+        const response = await axios.post("http://localhost:10010/api.change.password", formData, {
             headers: { 'Content-Type': 'application/json' }
         });
         return response.data;
